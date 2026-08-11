@@ -1,0 +1,6 @@
+{
+  "name": "Gin Fácil — O Efeito Bartender",
+  "description": "Landing page de alta conversão do e-book e guia de coquetelaria em casa Gin Fácil — O Efeito Bartender.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
