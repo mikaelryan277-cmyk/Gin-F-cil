@@ -22,11 +22,11 @@ export const FinalCtaFooter: React.FC<FinalCtaFooterProps> = ({ onScrollToOffer,
           </div>
 
           <h2 className="font-serif-display font-extrabold text-3xl sm:text-5xl text-white mb-6 leading-tight">
-            Neste Fim de Semana, Deixe a Cerveja Morna de Lado e <span className="text-gold-gradient">Surpreenda a Turma</span>
+            Pronto pra mandar bem no próximo rolê?
           </h2>
 
           <p className="font-sans-body text-base sm:text-lg text-[#b0b6cc] max-w-2xl mx-auto mb-8 leading-relaxed">
-            Acesse as 30 receitas do Guia Gin Fácil imediatamente por apenas <strong className="text-white">R$ 14,90</strong> no PIX ou cartão. Seu próximo rolê nunca mais será o mesmo.
+            Acesse o método agora mesmo e transforme qualquer gin de supermercado em um drink de bar premium.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto mb-8">
@@ -36,7 +36,7 @@ export const FinalCtaFooter: React.FC<FinalCtaFooterProps> = ({ onScrollToOffer,
               data-checkout="final"
               className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-3 px-8 py-4.5 rounded-2xl bg-gradient-to-r from-[#d4af37] via-[#f3e5ab] to-[#aa771c] text-[#0b0c10] font-black text-base sm:text-lg uppercase tracking-wider transition-all duration-300 hover:scale-105 gold-glow-lg cursor-pointer"
             >
-              <span>VIRAR O BARTENDER DA TURMA</span>
+              <span>Quero o Plano Completo • R$27,90</span>
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </button>
           </div>

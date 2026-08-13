@@ -1,6 +1,6 @@
 import React from 'react';
 import { PAIN_AVATAR } from '../data/landingData';
-import { XCircle, AlertCircle, WineOff, Beer, Sparkles, Frown } from 'lucide-react';
+import { XCircle, AlertCircle, WineOff, Beer, Sparkles, Frown, CheckCircle2 } from 'lucide-react';
 
 export const PainAvatarSection: React.FC = () => {
   return (
@@ -45,11 +45,46 @@ export const PainAvatarSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Bottom Callout Banner */}
-        <div className="mt-12 max-w-3xl mx-auto bg-gradient-to-r from-[#171926] via-[#1f1d2b] to-[#171926] border border-[#d4af37]/30 rounded-2xl p-6 text-center shadow-lg">
-          <p className="text-sm sm:text-base text-[#e0e2ec] font-medium leading-relaxed">
-            <span className="text-[#d4af37] font-bold">A boa notícia?</span> Fazer um drink digno de speakeasy em Havana não exige 5 anos de gastronomia nem facas importadas. Você só precisa das <strong className="text-white">proporções certas</strong> e dos <strong className="text-[#f3e5ab]">segredos de montagem de copo</strong> do nosso método.
-          </p>
+        {/* PARA QUEM É / NÃO É */}
+        <div className="mt-12 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-[#18231c]/40 border border-[#10b981]/20 rounded-2xl p-6">
+            <h4 className="text-[#10b981] font-bold text-sm uppercase tracking-wider mb-3">PARA QUEM É:</h4>
+            <ul className="text-xs sm:text-sm text-[#b0b6cc] space-y-2">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#10b981] shrink-0 mt-0.5" />
+                <span>Quem recebe a galera em casa e quer mandar bem na hora de servir.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#10b981] shrink-0 mt-0.5" />
+                <span>Quem quer aprender um método prático em 15 minutos sem curso chato.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#10b981] shrink-0 mt-0.5" />
+                <span>Quem quer transformar o gin comum do mercado em drink foda.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#10b981] shrink-0 mt-0.5" />
+                <span>Quem faz churrasco ou esquenta e não quer passar vergonha.</span>
+              </li>
+            </ul>
+          </div>
+          <div className="bg-[#261310]/40 border border-[#ef4444]/20 rounded-2xl p-6">
+            <h4 className="text-[#ef4444] font-bold text-sm uppercase tracking-wider mb-3">PARA QUEM NÃO É:</h4>
+            <ul className="text-xs sm:text-sm text-[#b0b6cc] space-y-2">
+              <li className="flex items-start gap-2">
+                <XCircle className="w-4 h-4 text-[#ef4444] shrink-0 mt-0.5" />
+                <span>Quem quer virar bartender profissional.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <XCircle className="w-4 h-4 text-[#ef4444] shrink-0 mt-0.5" />
+                <span>Quem quer gastar rios de dinheiro com xarope importado.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <XCircle className="w-4 h-4 text-[#ef4444] shrink-0 mt-0.5" />
+                <span>Quem prefere continuar servindo drink morno e aguado.</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>

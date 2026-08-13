@@ -15,10 +15,10 @@ export const WhatYouGetSection: React.FC = () => {
             <span>O QUE ESTÁ INCLUSO NO MÉTODO</span>
           </div>
           <h2 className="font-serif-display font-bold text-2xl sm:text-4xl text-white mb-4">
-            Um Guia Sensorial, Visual e Direto ao Ponto
+            O Que Você Vai Aprender no Método
           </h2>
           <p className="text-base sm:text-lg text-[#a0a5ba]">
-            Sem teorias cansativas. Você abre o guia no celular e já sabe exatamente o que comprar, como preparar e como servir.
+            Tudo o que você precisa para transformar ingredientes simples do mercado em drinks de alto nível.
           </p>
         </div>
 
