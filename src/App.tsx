@@ -3,7 +3,6 @@ import { HeroSection } from './components/HeroSection';
 import { PainAvatarSection } from './components/PainAvatarSection';
 import { TransformationSection } from './components/TransformationSection';
 import { WhatYouGetSection } from './components/WhatYouGetSection';
-import { InteractiveDrinkCalculator } from './components/InteractiveDrinkCalculator';
 import { PricingOfferSection } from './components/PricingOfferSection';
 import { SocialProofSection } from './components/SocialProofSection';
 import { GuaranteeSection } from './components/GuaranteeSection';
@@ -11,7 +10,8 @@ import { FaqSection } from './components/FaqSection';
 import { FinalCtaFooter } from './components/FinalCtaFooter';
 import { CheckoutSettingsModal } from './components/CheckoutSettingsModal';
 
-import heroMockupImg from './assets/images/hero_ebook_mockup_1786454344899.jpg';
+// Novo Mockup fornecido pelo usuário (https://imgur.com/a/tQC18ku)
+const NEW_MOCKUP_IMAGE_URL = 'https://images.weserv.nl/?url=https://i.imgur.com/tQC18ku.png';
 
 export default function App() {
   const [checkoutBasic, setCheckoutBasic] = useState('https://ggcheckout.app/checkout/v4/akNASSdlT23O50Jx6P0p');
@@ -38,14 +38,14 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0b0c10] text-[#e0e2ec] font-sans-body antialiased selection:bg-[#d4af37] selection:text-[#0b0c10] bg-cuban-pattern">
+    <div className="min-h-screen bg-[#090909] text-[#F5F5F0] font-sans-body antialiased selection:bg-[#E50920] selection:text-white bg-urban-dark">
       {/* Main Content Sections */}
       <main>
         {/* 1. Hero Section */}
         <HeroSection
           onScrollToOffer={scrollToOffer}
           onScrollToPreview={scrollToPreview}
-          mockupImgPath={heroMockupImg}
+          mockupImgPath={NEW_MOCKUP_IMAGE_URL}
         />
 
         {/* 2. Pain / Avatar Identification Section */}
@@ -57,26 +57,23 @@ export default function App() {
         {/* 4. What You Get (O Que Você Recebe + PDF Preview) */}
         <WhatYouGetSection />
 
-        {/* 5. Interactive Drink Calculator Bonus Tool */}
-        <InteractiveDrinkCalculator onScrollToOffer={scrollToOffer} />
-
-        {/* 6. Pricing Offer Section (2 Cards Side by Side) */}
+        {/* 5. Pricing Offer Section (2 Cards Side by Side) */}
         <PricingOfferSection
           customCheckoutBasic={checkoutBasic}
           customCheckoutComplete={checkoutComplete}
           onOpenSettingsModal={() => setIsSettingsOpen(true)}
         />
 
-        {/* 7. Social Proof & Testimonials */}
+        {/* 6. Social Proof & Testimonials */}
         <SocialProofSection />
 
-        {/* 8. 7-Day Guarantee */}
+        {/* 7. 7-Day Guarantee */}
         <GuaranteeSection />
 
-        {/* 9. FAQ Accordion */}
+        {/* 8. FAQ Accordion */}
         <FaqSection />
 
-        {/* 10. Final Urgency CTA & Footer */}
+        {/* 9. Final Urgency CTA & Footer */}
         <FinalCtaFooter
           onScrollToOffer={scrollToOffer}
           checkoutUrlComplete={checkoutComplete}
@@ -94,4 +91,5 @@ export default function App() {
     </div>
   );
 }
+
 

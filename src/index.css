@@ -14,47 +14,48 @@
 
 /* Custom background grain overlay */
 .bg-grain {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
 }
 
-/* Cuban / Speakeasy Immersive UI pattern overlay */
-.bg-cuban-pattern {
-  background-color: #0a0a0a;
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3Z' fill='%23D4AF37' fill-opacity='0.08' fill-rule='evenodd'/%3E%3C/svg%3E");
+/* Dark Urban Speakeasy / Night bar background pattern */
+.bg-urban-dark {
+  background-color: #090909;
+  background-image: radial-gradient(rgba(229, 9, 32, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
 }
 
-/* Gold shimmer gradient text */
-.text-gold-gradient {
-  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #8A6D3B 100%);
+/* Red shimmer gradient text */
+.text-red-gradient {
+  background: linear-gradient(135deg, #FF334B 0%, #E50920 50%, #B80818 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Gold border gradient */
-.border-gold-gradient {
-  border-image: linear-gradient(135deg, #e5c158, #b8860b, #e5c158) 1;
+/* Red border gradient */
+.border-red-gradient {
+  border-image: linear-gradient(135deg, #E50920, #8A0612, #E50920) 1;
 }
 
-/* Button & card golden glow */
-.gold-glow {
-  box-shadow: 0 0 25px rgba(212, 175, 55, 0.35);
+/* Red button & card glows */
+.red-glow {
+  box-shadow: 0 0 25px rgba(229, 9, 32, 0.35);
 }
 
-.gold-glow-lg {
-  box-shadow: 0 0 45px rgba(212, 175, 55, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+.red-glow-lg {
+  box-shadow: 0 0 40px rgba(229, 9, 32, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
-.emerald-glow {
-  box-shadow: 0 0 25px rgba(6, 78, 59, 0.4);
+.red-glow-subtle {
+  box-shadow: 0 0 20px rgba(229, 9, 32, 0.15);
 }
 
-/* Float animations for cocktail/bubbles/shaker */
+/* Float animations for cocktail/elements */
 @keyframes float {
   0%, 100% {
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-12px) rotate(1.5deg);
+    transform: translateY(-10px) rotate(1deg);
   }
 }
 
@@ -65,7 +66,7 @@
   }
   50% {
     opacity: 0.95;
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
 }
 
@@ -75,7 +76,7 @@
     opacity: 0;
   }
   50% {
-    opacity: 0.8;
+    opacity: 0.7;
   }
   100% {
     transform: translateY(-120px) scale(1.2);
@@ -83,22 +84,8 @@
   }
 }
 
-@keyframes vaporFloat {
-  0% {
-    transform: translateY(0) scale(1) rotate(0deg);
-    opacity: 0;
-  }
-  30% {
-    opacity: 0.4;
-  }
-  100% {
-    transform: translateY(-80px) scale(1.8) rotate(10deg);
-    opacity: 0;
-  }
-}
-
 .animate-float {
-  animation: float 5s ease-in-out infinite;
+  animation: float 6s ease-in-out infinite;
 }
 
 .animate-pulse-glow {
@@ -117,21 +104,18 @@
   animation: riseBubble 3.5s ease-in-out infinite 0.7s;
 }
 
-.animate-vapor {
-  animation: vaporFloat 6s ease-out infinite;
-}
-
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0b0c10;
+  background: #090909;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2a2d3d;
+  background: #262626;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #d4af37;
+  background: #E50920;
 }
+
