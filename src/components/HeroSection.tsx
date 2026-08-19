@@ -108,10 +108,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <div className="absolute inset-0 bg-gradient-to-tr from-[#E50920]/25 via-[#8A0612]/30 to-[#E50920]/15 rounded-3xl blur-2xl transform scale-105" />
 
               {/* Main Floating Product Mockup Frame */}
-              <div className="relative bg-gradient-to-b from-[#1c1c1c] via-[#141414] to-[#0d0d0d] p-3 sm:p-4 rounded-3xl border border-[#E50920]/40 shadow-2xl animate-float">
-                <div className="relative overflow-hidden rounded-2xl border border-[#262626] bg-[#090909] flex items-center justify-center">
+              <div className="relative bg-gradient-to-b from-[#1c1c1c] via-[#141414] to-[#0d0d0d] p-3 sm:p-4 rounded-3xl border border-[#E50920]/40 shadow-2xl animate-float aspect-[4/5] sm:aspect-auto">
+                <div className="relative overflow-hidden rounded-2xl border border-[#262626] bg-[#090909] flex items-center justify-center min-h-[300px] sm:min-h-[450px] aspect-[4/5]">
                   <img
                     src={mockupImgPath || '/mockup-efeito-bartender.png'}
+                    width="600"
+                    height="750"
+                    fetchPriority="high"
+                    decoding="async"
                     onError={(e) => {
                       const target = e.currentTarget as HTMLImageElement;
                       if (!target.dataset.tried) {
@@ -119,10 +123,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                         target.src = 'https://i.imgur.com/XkzTVg7.png';
                       } else if (target.dataset.tried === '1') {
                         target.dataset.tried = '2';
-                        target.src = 'https://i.imgur.com/XkzTVg7.jpg';
-                      } else if (target.dataset.tried === '2') {
-                        target.dataset.tried = '3';
-                        target.src = 'https://images.weserv.nl/?url=https://i.imgur.com/XkzTVg7.png';
+                        target.src = 'https://i.imgur.com/XkzTVg7l.jpg'; // Using optimized Imgur thumbnail
                       }
                     }}
                     alt="Efeito Bartender - Guia Oficial de Copões de Gin"

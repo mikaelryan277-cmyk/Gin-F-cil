@@ -2,13 +2,16 @@
 
 @layer utilities {
   .font-serif-display {
-    font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
-  }
-  .font-serif-body {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Cinzel', Georgia, serif;
   }
   .font-sans-body {
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+  
+  /* Performance: Content visibility for off-screen content */
+  .section-lazy {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 500px;
   }
 }
 
@@ -86,10 +89,12 @@
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+  will-change: transform;
 }
 
 .animate-pulse-glow {
   animation: pulseGlow 3s ease-in-out infinite;
+  will-change: opacity, transform;
 }
 
 .animate-bubble-1 {

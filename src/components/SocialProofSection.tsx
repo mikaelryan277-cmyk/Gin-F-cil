@@ -43,20 +43,27 @@ export const SocialProofSection: React.FC = () => {
 
         {/* Real Reviews Grid */}
         <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 max-w-6xl mx-auto">
-          {REAL_REVIEWS.map((imgUrl, idx) => (
-            <div
-              key={idx}
-              className="break-inside-avoid bg-[#171717] border border-[#262626] hover:border-[#E50920]/40 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 shadow-2xl"
-            >
-              <img
-                src={imgUrl}
-                alt={`Avaliação Real ${idx + 1}`}
-                className="w-full h-auto object-contain"
-                referrerPolicy="no-referrer"
-                loading="lazy"
-              />
-            </div>
-          ))}
+          {REAL_REVIEWS.map((imgUrl, idx) => {
+            // Optimize Imgur URLs by adding 'l' (large thumbnail, max 640px) for performance
+            const optimizedUrl = imgUrl.replace(/\.(png|jpg|jpeg|webp)$/, 'l.$1');
+            return (
+              <div
+                key={idx}
+                className="break-inside-avoid bg-[#171717] border border-[#262626] hover:border-[#E50920]/40 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 shadow-2xl min-h-[300px]"
+              >
+                <img
+                  src={optimizedUrl}
+                  alt={`Avaliação Real ${idx + 1}`}
+                  width="640"
+                  height="1200"
+                  className="w-full h-auto object-contain"
+                  referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
