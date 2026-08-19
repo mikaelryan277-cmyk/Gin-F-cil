@@ -89,22 +89,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
             {/* Social Trust Bar */}
             <div className="pt-4 border-t border-[#1f1f1f] flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-[#B8B8B8]">
-              <div className="flex items-center gap-2">
-                <div className="flex -space-x-2">
-                  <img className="w-7 h-7 rounded-full border-2 border-[#090909] object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Avatar User" />
-                  <img className="w-7 h-7 rounded-full border-2 border-[#090909] object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Avatar User" />
-                  <img className="w-7 h-7 rounded-full border-2 border-[#090909] object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Avatar User" />
-                </div>
-                <div>
-                  <div className="flex text-[#E50920]">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3 h-3 fill-current" />
-                    ))}
-                  </div>
-                  <span className="font-semibold text-[#F5F5F0]">4.9/5 (+2.400 caras usando)</span>
-                </div>
-              </div>
-
               <div className="flex items-center gap-1.5">
                 <Download className="w-4 h-4 text-[#E50920]" />
                 <span>Download imediato no celular</span>
@@ -127,18 +111,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <div className="relative bg-gradient-to-b from-[#1c1c1c] via-[#141414] to-[#0d0d0d] p-3 sm:p-4 rounded-3xl border border-[#E50920]/40 shadow-2xl animate-float">
                 <div className="relative overflow-hidden rounded-2xl border border-[#262626] bg-[#090909] flex items-center justify-center">
                   <img
-                    src={mockupImgPath}
+                    src={mockupImgPath || '/mockup-efeito-bartender.png'}
                     onError={(e) => {
                       const target = e.currentTarget as HTMLImageElement;
                       if (!target.dataset.tried) {
                         target.dataset.tried = '1';
-                        target.src = 'https://i.imgur.com/tQC18ku.png';
+                        target.src = 'https://i.imgur.com/XkzTVg7.png';
                       } else if (target.dataset.tried === '1') {
                         target.dataset.tried = '2';
-                        target.src = 'https://i.imgur.com/tQC18ku.jpg';
+                        target.src = 'https://i.imgur.com/XkzTVg7.jpg';
                       } else if (target.dataset.tried === '2') {
                         target.dataset.tried = '3';
-                        target.src = 'https://i.imgur.com/tQC18ku.jpeg';
+                        target.src = 'https://images.weserv.nl/?url=https://i.imgur.com/XkzTVg7.png';
                       }
                     }}
                     alt="Efeito Bartender - Guia Oficial de Copões de Gin"
@@ -155,15 +139,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     <div>
                       <p className="text-xs font-bold text-white leading-tight">Efeito Bartender</p>
                       <p className="text-[10px] text-[#B8B8B8]">Método dos Copões de Gin</p>
-                    </div>
-                  </div>
-
-                  {/* Badge Floating Bottom Right */}
-                  <div className="absolute bottom-3 right-3 bg-[#111111]/90 backdrop-blur-md border border-[#2a2a2a] rounded-xl px-3 py-2 shadow-2xl flex items-center gap-2">
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#E50920] animate-ping" />
-                    <div>
-                      <p className="text-[11px] font-bold text-[#F5F5F0] leading-tight">Preparo em 2 Minutos</p>
-                      <p className="text-[10px] text-[#B8B8B8]">R$ 6 a 9 por copão</p>
                     </div>
                   </div>
                 </div>

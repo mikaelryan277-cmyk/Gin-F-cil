@@ -154,22 +154,10 @@ export const PricingOfferSection: React.FC<PricingOfferSectionProps> = ({
               Risco Zero: 7 Dias de Garantia Incondicional
             </h4>
             <p className="text-xs sm:text-sm text-[#B8B8B8] leading-relaxed">
-              Abra o guia, teste os métodos nos seus copões de fim de semana. Se você não achar que seus drinks ficaram 10x melhores e economizou dinheiro, basta enviar um e-mail que devolvemos 100% do seu valor. Sem perguntas.
+              Teste o método por 7 dias. Se você decidir que o produto não é para você, solicite o reembolso dentro do prazo e devolvemos 100% do seu investimento.
             </p>
           </div>
         </div>
-
-        {/* Customizable link settings helper badge for user */}
-        {onOpenSettingsModal && (
-          <div className="mt-8 text-center">
-            <button
-              onClick={onOpenSettingsModal}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#141414] hover:bg-[#1f1f1f] border border-[#2a2a2a] text-xs text-[#888888] hover:text-[#F5F5F0] transition-colors cursor-pointer"
-            >
-              <span>⚙️ Configurar Links de Checkout (Hotmart / Kiwify / GGCheckout)</span>
-            </button>
-          </div>
-        )}
       </div>
     </section>
   );

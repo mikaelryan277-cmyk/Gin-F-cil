@@ -8,15 +8,13 @@ import { SocialProofSection } from './components/SocialProofSection';
 import { GuaranteeSection } from './components/GuaranteeSection';
 import { FaqSection } from './components/FaqSection';
 import { FinalCtaFooter } from './components/FinalCtaFooter';
-import { CheckoutSettingsModal } from './components/CheckoutSettingsModal';
 
-// Novo Mockup fornecido pelo usuário (https://imgur.com/a/tQC18ku)
-const NEW_MOCKUP_IMAGE_URL = 'https://images.weserv.nl/?url=https://i.imgur.com/tQC18ku.png';
+// Mockup oficial em alta definição (salvo localmente e com fallbacks)
+const NEW_MOCKUP_IMAGE_URL = '/mockup-efeito-bartender.png';
 
 export default function App() {
-  const [checkoutBasic, setCheckoutBasic] = useState('https://ggcheckout.app/checkout/v4/akNASSdlT23O50Jx6P0p');
-  const [checkoutComplete, setCheckoutComplete] = useState('https://ggcheckout.app/checkout/v4/w8WpOvBkzPNAtTxTOXuE');
-  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [checkoutBasic] = useState('https://ggcheckout.app/checkout/v4/akNASSdlT23O50Jx6P0p');
+  const [checkoutComplete] = useState('https://ggcheckout.app/checkout/v4/w8WpOvBkzPNAtTxTOXuE');
 
   const scrollToOffer = () => {
     const el = document.getElementById('pricing-section');
@@ -30,11 +28,6 @@ export default function App() {
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
-  };
-
-  const handleSaveCheckout = (basic: string, complete: string) => {
-    setCheckoutBasic(basic);
-    setCheckoutComplete(complete);
   };
 
   return (
@@ -57,15 +50,14 @@ export default function App() {
         {/* 4. What You Get (O Que Você Recebe + PDF Preview) */}
         <WhatYouGetSection />
 
-        {/* 5. Pricing Offer Section (2 Cards Side by Side) */}
+        {/* 5. Social Proof & Real Reviews */}
+        <SocialProofSection />
+
+        {/* 6. Pricing Offer Section (2 Cards Side by Side) */}
         <PricingOfferSection
           customCheckoutBasic={checkoutBasic}
           customCheckoutComplete={checkoutComplete}
-          onOpenSettingsModal={() => setIsSettingsOpen(true)}
         />
-
-        {/* 6. Social Proof & Testimonials */}
-        <SocialProofSection />
 
         {/* 7. 7-Day Guarantee */}
         <GuaranteeSection />
@@ -79,15 +71,6 @@ export default function App() {
           checkoutUrlComplete={checkoutComplete}
         />
       </main>
-
-      {/* Settings Modal for Checkout links */}
-      <CheckoutSettingsModal
-        isOpen={isSettingsOpen}
-        onClose={() => setIsSettingsOpen(false)}
-        checkoutBasic={checkoutBasic}
-        checkoutComplete={checkoutComplete}
-        onSave={handleSaveCheckout}
-      />
     </div>
   );
 }

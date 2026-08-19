@@ -24,7 +24,7 @@ export const FinalCtaFooter: React.FC<FinalCtaFooterProps> = ({ onScrollToOffer 
           </h2>
 
           <p className="font-sans-body text-base sm:text-lg text-[#B8B8B8] max-w-2xl mx-auto mb-8 leading-relaxed">
-            Acesse o método agora mesmo e aprenda a preparar copões de alto padrão usando ingredientes de mercado, gastando uma fração do bar.
+            Aprenda a preparar copões melhores usando ingredientes de mercado e gastando uma fração do que gastaria no bar.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto mb-8">
@@ -34,7 +34,7 @@ export const FinalCtaFooter: React.FC<FinalCtaFooterProps> = ({ onScrollToOffer 
               data-checkout="final"
               className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-3 px-8 py-4.5 rounded-xl bg-[#E50920] hover:bg-[#B80818] text-white font-black text-sm sm:text-base uppercase tracking-wider transition-all duration-300 hover:scale-105 red-glow-lg cursor-pointer"
             >
-              <span>QUERO O EFEITO BARTENDER (A partir de R$ 14,90)</span>
+              <span>QUERO O EFEITO BARTENDER</span>
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </button>
           </div>

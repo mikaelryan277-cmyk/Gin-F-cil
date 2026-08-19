@@ -20,17 +20,13 @@ export const GuaranteeSection: React.FC = () => {
 
             {/* Right Column: Copy & Details */}
             <div className="lg:col-span-8 text-center lg:text-left space-y-4">
-              <span className="text-xs font-bold text-[#E50920] uppercase tracking-widest">Compromisso de Satisfação</span>
+              <span className="text-xs font-bold text-[#E50920] uppercase tracking-widest">RISCO ZERO</span>
               <h2 className="font-serif-display font-bold text-2xl sm:text-3xl text-[#F5F5F0]">
-                Ou Seus Drinks Impressionam Todo Mundo ou Você Não Paga Nada!
+                7 DIAS DE GARANTIA
               </h2>
 
               <p className="text-sm sm:text-base text-[#B8B8B8] leading-relaxed">
-                Nós confiamos tanto no poder do Efeito Bartender que assumimos todo o risco por você. Acesse o método no celular, teste os copões neste fim de semana e veja a reação das pessoas.
-              </p>
-
-              <p className="text-sm text-[#B8B8B8] leading-relaxed">
-                Se por qualquer motivo você não gostar das receitas ou achar que o método não é para você, basta nos mandar uma mensagem dentro de <strong className="text-[#F5F5F0]">7 dias</strong> e devolveremos <strong className="text-[#E50920]">100% do seu dinheiro</strong>. Sem letras miúdas.
+                Teste o método por 7 dias. Se você decidir que o produto não é para você, solicite o reembolso dentro do prazo e devolvemos 100% do seu investimento.
               </p>
 
               <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs font-semibold text-[#F5F5F0]">

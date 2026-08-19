@@ -1,6 +1,6 @@
 import React from 'react';
-import { PAIN_AVATAR, TARGET_AUDIENCE } from '../data/landingData';
-import { XCircle, Frown, CheckCircle2, UserCheck, UserX } from 'lucide-react';
+import { PAIN_AVATAR } from '../data/landingData';
+import { XCircle, Frown } from 'lucide-react';
 
 export const PainAvatarSection: React.FC = () => {
   return (
