@@ -59,7 +59,8 @@ export const PricingOfferSection: React.FC<PricingOfferSectionProps> = ({
 
                 <div>
                   <div className="text-center pb-6 border-b border-[#262626]">
-                    <div className="min-h-[80px] flex flex-col justify-center">
+                    {/* Header Area with consistent height on desktop to ensure price alignment */}
+                    <div className="lg:h-[90px] flex flex-col justify-center mb-4">
                       <h3 className="font-serif-display font-bold text-2xl text-[#F5F5F0] mb-2 uppercase tracking-wide">
                         {plan.name}
                       </h3>
@@ -68,20 +69,20 @@ export const PricingOfferSection: React.FC<PricingOfferSectionProps> = ({
                       </p>
                     </div>
 
-                    {/* Pricing */}
-                    <div className="mt-8 min-h-[100px] flex flex-col justify-center">
-                      <p className="text-xs text-[#888888] line-through font-semibold mb-1">
+                    {/* Standardized Price Area */}
+                    <div className="price-area flex flex-col items-center justify-center min-h-[140px] mt-6">
+                      <div className="old-price text-xs text-[#888888] line-through font-semibold mb-1">
                         De R$ {plan.originalPrice}
-                      </p>
-                      <div className="flex items-center justify-center gap-2">
-                        <span className="text-sm font-bold text-[#E50920]">POR APENAS</span>
-                        <span className="font-serif-display font-black text-5xl text-[#F5F5F0]">
-                          R$ {plan.price}
-                        </span>
                       </div>
-                      <p className="text-[11px] text-[#E50920] font-bold mt-2 uppercase tracking-widest">
+                      <div className="price-label text-sm font-bold text-[#E50920] mb-1">
+                        POR APENAS
+                      </div>
+                      <div className="main-price font-serif-display font-black text-5xl text-[#F5F5F0]">
+                        R$ {plan.price}
+                      </div>
+                      <div className="payment-type text-[11px] text-[#E50920] font-bold mt-2 uppercase tracking-widest">
                         Acesso Vitalício
-                      </p>
+                      </div>
                     </div>
                   </div>
 
