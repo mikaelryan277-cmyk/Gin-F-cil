@@ -1,17 +1,16 @@
-import React, { useState, lazy, Suspense } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 import { HeroSection } from './components/HeroSection';
+import { SocialProofSection } from './components/SocialProofSection';
+import { WhatWillLearnSection } from './components/WhatWillLearnSection';
+import { PainAvatarSection } from './components/PainAvatarSection';
+import { WhatYouGetSection } from './components/WhatYouGetSection';
+import { PricingOfferSection } from './components/PricingOfferSection';
+import { GuaranteeSection } from './components/GuaranteeSection';
+import { FaqSection } from './components/FaqSection';
+import { FinalCtaFooter } from './components/FinalCtaFooter';
 
-// Lazy load below-the-fold components
-const PainAvatarSection = lazy(() => import('./components/PainAvatarSection').then(m => ({ default: m.PainAvatarSection })));
-const TransformationSection = lazy(() => import('./components/TransformationSection').then(m => ({ default: m.TransformationSection })));
-const WhatYouGetSection = lazy(() => import('./components/WhatYouGetSection').then(m => ({ default: m.WhatYouGetSection })));
-const SocialProofSection = lazy(() => import('./components/SocialProofSection').then(m => ({ default: m.SocialProofSection })));
-const PricingOfferSection = lazy(() => import('./components/PricingOfferSection').then(m => ({ default: m.PricingOfferSection })));
-const GuaranteeSection = lazy(() => import('./components/GuaranteeSection').then(m => ({ default: m.GuaranteeSection })));
-const FaqSection = lazy(() => import('./components/FaqSection').then(m => ({ default: m.FaqSection })));
-const FinalCtaFooter = lazy(() => import('./components/FinalCtaFooter').then(m => ({ default: m.FinalCtaFooter })));
-
-// Loading fallback for lazy components
+// Loading fallback (no longer needed for normal imports but kept for structural consistency if needed)
 const SectionLoader = () => <div className="py-20 bg-[#090909]" />;
 
 // Mockup oficial em alta definição (salvo localmente e com fallbacks)
@@ -29,7 +28,7 @@ export default function App() {
   };
 
   const scrollToPreview = () => {
-    const el = document.getElementById('preview-section');
+    const el = document.getElementById('what-will-learn');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
@@ -46,53 +45,51 @@ export default function App() {
           mockupImgPath={NEW_MOCKUP_IMAGE_URL}
         />
 
-        <Suspense fallback={<SectionLoader />}>
-          {/* 2. Pain / Avatar Identification Section (CRITICAL-ISH) */}
-          <div className="section-lazy">
-            <PainAvatarSection />
-          </div>
+        {/* 2. What Will Learn (IMMEDIATELY AFTER HERO) */}
+        <div className="section-lazy" id="what-will-learn">
+          <WhatWillLearnSection />
+        </div>
 
-          {/* 3. Transformation (Antes vs Depois) */}
-          <div className="section-lazy">
-            <TransformationSection onScrollToOffer={scrollToOffer} />
-          </div>
+        {/* 3. Pain / Avatar Identification Section */}
+        <div className="section-lazy">
+          <PainAvatarSection />
+        </div>
 
-          {/* 4. What You Get (O Que Você Recebe + PDF Preview) */}
-          <div className="section-lazy">
-            <WhatYouGetSection />
-          </div>
+        {/* 5. What You Get (Explicit Deliverables) */}
+        <div className="section-lazy">
+          <WhatYouGetSection />
+        </div>
 
-          {/* 5. Social Proof & Real Reviews */}
-          <div className="section-lazy">
-            <SocialProofSection />
-          </div>
+        {/* 6. Social Proof & Real Reviews */}
+        <div className="section-lazy">
+          <SocialProofSection />
+        </div>
 
-          {/* 6. Pricing Offer Section (2 Cards Side by Side) */}
-          <div className="section-lazy" id="pricing-section">
-            <PricingOfferSection
-              customCheckoutBasic={checkoutBasic}
-              customCheckoutComplete={checkoutComplete}
-            />
-          </div>
+        {/* 6. Pricing Offer Section (2 Cards Side by Side) */}
+        <div className="section-lazy" id="pricing-section">
+          <PricingOfferSection
+            customCheckoutBasic={checkoutBasic}
+            customCheckoutComplete={checkoutComplete}
+          />
+        </div>
 
-          {/* 7. 7-Day Guarantee */}
-          <div className="section-lazy">
-            <GuaranteeSection />
-          </div>
+        {/* 7. 7-Day Guarantee */}
+        <div className="section-lazy">
+          <GuaranteeSection />
+        </div>
 
-          {/* 8. FAQ Accordion */}
-          <div className="section-lazy">
-            <FaqSection />
-          </div>
+        {/* 8. FAQ Accordion */}
+        <div className="section-lazy">
+          <FaqSection />
+        </div>
 
-          {/* 9. Final Urgency CTA & Footer */}
-          <div className="section-lazy">
-            <FinalCtaFooter
-              onScrollToOffer={scrollToOffer}
-              checkoutUrlComplete={checkoutComplete}
-            />
-          </div>
-        </Suspense>
+        {/* 9. Final Urgency CTA & Footer */}
+        <div className="section-lazy">
+          <FinalCtaFooter
+            onScrollToOffer={scrollToOffer}
+            checkoutUrlComplete={checkoutComplete}
+          />
+        </div>
       </main>
     </div>
   );

@@ -25,17 +25,17 @@ export const PricingOfferSection: React.FC<PricingOfferSectionProps> = ({
             <span>OFERTA LIMITADA DE LANÇAMENTO</span>
           </div>
           <h2 className="font-serif-display font-bold text-3xl sm:text-5xl text-[#F5F5F0] mb-4">
-            Escolha Sua Versão do Método
+            Escolha o Seu Plano
           </h2>
           <p className="text-base sm:text-lg text-[#B8B8B8]">
-            Acesso vitalício imediato no seu e-mail e celular. Sem mensalidade, sem pegadinhas.
+            Acesso vitalício imediato. Pagamento único, sem mensalidades.
           </p>
         </div>
 
         {/* 2 Pricing Cards Side by Side */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
           {PRICING_PLANS.map((plan) => {
-            const isFeatured = plan.isPopular;
+            const isFeatured = plan.id === 'complete';
             const checkoutLink = isFeatured
               ? (customCheckoutComplete || plan.checkoutUrl)
               : (customCheckoutBasic || plan.checkoutUrl);
@@ -43,57 +43,52 @@ export const PricingOfferSection: React.FC<PricingOfferSectionProps> = ({
             return (
               <div
                 key={plan.id}
-                className={`relative flex flex-col justify-between rounded-3xl p-6 sm:p-10 transition-all duration-300 hover:-translate-y-1.5 ${
+                className={`relative flex flex-col justify-between rounded-3xl p-6 sm:p-10 transition-all duration-300 ${
                   isFeatured
-                    ? 'bg-[#171717] border-2 border-[#E50920] shadow-2xl red-glow-lg'
-                    : 'bg-[#141414] border border-[#262626] hover:border-[#3a3a3a] shadow-xl'
+                    ? 'bg-[#171717] border-2 border-[#E50920] shadow-2xl red-glow-lg scale-105 z-10'
+                    : 'bg-[#141414] border border-[#262626] opacity-90'
                 }`}
               >
                 {/* Popular Badge */}
                 {isFeatured && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#E50920] text-white text-xs font-black px-5 py-1.5 rounded-full uppercase tracking-wider shadow-lg flex items-center gap-1.5 whitespace-nowrap">
                     <Crown className="w-3.5 h-3.5" />
-                    <span>{plan.badgeText || "MAIS ESCOLHIDO"}</span>
+                    <span>MAIS ESCOLHIDO</span>
                   </div>
                 )}
 
                 <div>
                   <div className="text-center pb-6 border-b border-[#262626]">
-                    <h3 className="font-serif-display font-bold text-2xl text-[#F5F5F0] mb-2">
+                    <h3 className="font-serif-display font-bold text-2xl text-[#F5F5F0] mb-2 uppercase tracking-wide">
                       {plan.name}
                     </h3>
-                    <p className="text-xs text-[#888888] min-h-[36px] max-w-xs mx-auto">
+                    <p className="text-sm text-[#888888] font-medium italic">
                       {plan.tagline}
                     </p>
 
                     {/* Pricing */}
-                    <div className="mt-6">
-                      <p className="text-xs text-[#888888] line-through font-semibold">
+                    <div className="mt-8">
+                      <p className="text-xs text-[#888888] line-through font-semibold mb-1">
                         De R$ {plan.originalPrice}
                       </p>
-                      <div className="flex items-baseline justify-center gap-1 mt-1">
-                        <span className="text-sm font-bold text-[#E50920]">Por R$</span>
-                        <span className="font-serif-display font-extrabold text-4xl sm:text-5xl text-[#F5F5F0] tracking-tight">
-                          {plan.price}
+                      <div className="flex items-center justify-center gap-2">
+                        <span className="text-sm font-bold text-[#E50920]">POR APENAS</span>
+                        <span className="font-serif-display font-black text-5xl text-[#F5F5F0]">
+                          R$ {plan.price}
                         </span>
-                        <span className="text-xs text-[#888888] font-medium">/ pagamento único</span>
                       </div>
-                      <p className="text-[11px] text-[#E50920] font-bold mt-1">
-                        Sem mensalidades. Acesso vitalício!
+                      <p className="text-[11px] text-[#E50920] font-bold mt-2 uppercase tracking-widest">
+                        Acesso Vitalício
                       </p>
                     </div>
                   </div>
 
                   {/* Feature Checklist */}
-                  <ul className="py-6 space-y-3.5 text-xs sm:text-sm text-[#B8B8B8]">
+                  <ul className="py-8 space-y-4 text-sm text-[#B8B8B8]">
                     {plan.features.map((feature, fIdx) => (
                       <li key={fIdx} className="flex items-start gap-3">
-                        <div className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${
-                          isFeatured ? 'bg-[#E50920] text-white' : 'bg-[#222222] text-[#E50920]'
-                        }`}>
-                          <Check className="w-3.5 h-3.5 font-bold" />
-                        </div>
-                        <span className={fIdx < 2 && isFeatured ? 'font-bold text-[#F5F5F0]' : ''}>
+                        <Check className={`w-5 h-5 shrink-0 ${isFeatured ? 'text-[#E50920]' : 'text-[#888888]'}`} />
+                        <span className={isFeatured ? 'text-[#F5F5F0] font-medium' : ''}>
                           {feature}
                         </span>
                       </li>

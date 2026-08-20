@@ -42,49 +42,47 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Left Column: Text & CTAs */}
           <div className="lg:col-span-7 text-center lg:text-left">
-            <h1 className="font-serif-display font-black text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-[#F5F5F0] leading-[1.15] sm:leading-[1.15] mb-6 tracking-tight">
-              Ela Não Precisa Saber <span className="text-red-gradient">Quanto Você Gastou.</span>
+            <h1 className="font-serif-display font-black text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-[#F5F5F0] leading-[1.1] sm:leading-[1.1] mb-6 tracking-tight">
+              {HERO_COPY.headline}
             </h1>
 
-            <p className="font-sans-body text-base sm:text-lg lg:text-xl text-[#B8B8B8] leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
+            <p className="font-sans-body text-lg sm:text-xl lg:text-2xl text-[#F5F5F0]/90 font-medium leading-relaxed mb-4 max-w-2xl mx-auto lg:mx-0">
               {HERO_COPY.subheadline}
+            </p>
+
+            <p className="font-sans-body text-base sm:text-lg text-[#B8B8B8] italic mb-8 max-w-2xl mx-auto lg:mx-0">
+              "Ela não precisa saber quanto você gastou."
             </p>
 
             {/* Quick value highlights */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 max-w-xl mx-auto lg:mx-0 text-xs sm:text-sm text-[#F5F5F0]">
-              <div className="flex items-center justify-center lg:justify-start gap-2 bg-[#171717] border border-[#262626] px-3.5 py-2.5 rounded-xl">
-                <CheckCircle2 className="w-4 h-4 text-[#E50920] shrink-0" />
-                <span className="font-medium">Copão de 500–700ml</span>
-              </div>
-              <div className="flex items-center justify-center lg:justify-start gap-2 bg-[#171717] border border-[#262626] px-3.5 py-2.5 rounded-xl">
-                <CheckCircle2 className="w-4 h-4 text-[#E50920] shrink-0" />
-                <span className="font-medium">Gin de Supermercado</span>
-              </div>
-              <div className="flex items-center justify-center lg:justify-start gap-2 bg-[#171717] border border-[#262626] px-3.5 py-2.5 rounded-xl">
-                <CheckCircle2 className="w-4 h-4 text-[#E50920] shrink-0" />
-                <span className="font-medium">Preparo em 2 Minutos</span>
-              </div>
+              {HERO_COPY.guarantees.map((item, idx) => (
+                <div key={idx} className="flex items-center justify-center lg:justify-start gap-2 bg-[#171717] border border-[#262626] px-3.5 py-2.5 rounded-xl">
+                  <CheckCircle2 className="w-4 h-4 text-[#E50920] shrink-0" />
+                  <span className="font-medium">{item}</span>
+                </div>
+              ))}
             </div>
 
             {/* Main Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-4">
               <button
                 onClick={onScrollToOffer}
                 id="btn-hero-cta"
                 data-checkout="hero"
-                className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-3 px-8 py-4 sm:py-4.5 rounded-xl bg-[#E50920] hover:bg-[#B80818] text-white font-black text-sm sm:text-base uppercase tracking-wide transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] red-glow-lg cursor-pointer"
+                className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-3 px-10 py-5 rounded-xl bg-[#E50920] hover:bg-[#B80818] text-white font-black text-base sm:text-lg uppercase tracking-wide transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] red-glow-lg cursor-pointer shadow-[0_0_20px_rgba(229,9,32,0.4)]"
               >
                 <span>{HERO_COPY.mainCtaText}</span>
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </button>
+            </div>
 
-              <button
-                onClick={onScrollToPreview}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-[#171717] hover:bg-[#222222] border border-[#2a2a2a] text-[#F5F5F0] font-semibold text-sm transition-all duration-200 cursor-pointer"
-              >
-                <BookOpen className="w-4 h-4 text-[#E50920]" />
-                <span>{HERO_COPY.secondaryCtaText}</span>
-              </button>
+            <div className="mb-8 text-center lg:text-left">
+              <p className="text-xl sm:text-2xl font-black text-[#F5F5F0] flex items-center justify-center lg:justify-start gap-2">
+                <span className="text-sm font-normal text-[#B8B8B8] line-through">De R$ 49,90</span>
+                <span>Por apenas <span className="text-[#E50920]">R$ 14,90</span></span>
+              </p>
+              <p className="text-xs text-[#B8B8B8] mt-1">Pagamento único • Acesso imediato • 7 dias de garantia</p>
             </div>
 
             {/* Social Trust Bar */}

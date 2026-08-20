@@ -14,30 +14,28 @@ export const PainAvatarSection: React.FC = () => {
             <Frown className="w-4 h-4" />
             <span>A REALIDADE DO FIM DE SEMANA</span>
           </div>
-          <h2 className="font-serif-display font-bold text-2xl sm:text-4xl text-[#F5F5F0] mb-4">
+          <h2 className="font-serif-display font-bold text-3xl sm:text-4xl text-[#F5F5F0] mb-4">
             {PAIN_AVATAR.title}
           </h2>
-          <p className="text-base sm:text-lg text-[#B8B8B8]">
+          <p className="text-base sm:text-lg text-[#B8B8B8] max-w-2xl mx-auto">
             {PAIN_AVATAR.subtitle}
           </p>
         </div>
 
         {/* 4 Pain Points Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
           {PAIN_AVATAR.points.map((point, index) => (
             <div
               key={index}
-              className="group relative bg-[#171717] border border-[#262626] hover:border-[#E50920]/60 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#E50920]/10"
+              className="group relative bg-[#171717] border border-[#262626] rounded-2xl p-5 sm:p-6 transition-all duration-300"
             >
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-[#231215] border border-[#E50920]/40 flex items-center justify-center shrink-0 text-[#E50920] group-hover:scale-110 transition-transform">
-                  <XCircle className="w-5 h-5" />
-                </div>
+              <div className="flex items-center gap-4">
+                <XCircle className="w-6 h-6 text-[#E50920] shrink-0" />
                 <div>
-                  <h3 className="font-semibold text-lg text-[#F5F5F0] mb-2 group-hover:text-[#E50920] transition-colors">
+                  <h3 className="font-bold text-base sm:text-lg text-[#F5F5F0] group-hover:text-[#E50920] transition-colors">
                     {point.title}
                   </h3>
-                  <p className="text-sm text-[#B8B8B8] leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#B8B8B8] leading-relaxed">
                     {point.desc}
                   </p>
                 </div>

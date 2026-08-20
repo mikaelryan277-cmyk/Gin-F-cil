@@ -20,11 +20,11 @@ export const FinalCtaFooter: React.FC<FinalCtaFooterProps> = ({ onScrollToOffer 
           </div>
 
           <h2 className="font-serif-display font-bold text-3xl sm:text-5xl text-[#F5F5F0] mb-6 leading-tight">
-            Pronto pra mandar bem no próximo encontro ou esquenta?
+            Pronto para fazer copões bonitos e gostosos em casa?
           </h2>
 
           <p className="font-sans-body text-base sm:text-lg text-[#B8B8B8] max-w-2xl mx-auto mb-8 leading-relaxed">
-            Aprenda a preparar copões melhores usando ingredientes de mercado e gastando uma fração do que gastaria no bar.
+            Pare de improvisar. Aprenda o método agora e garanta drinks de alto nível no seu próximo encontro ou esquenta por apenas R$ 14,90.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto mb-8">
@@ -32,9 +32,9 @@ export const FinalCtaFooter: React.FC<FinalCtaFooterProps> = ({ onScrollToOffer 
               onClick={onScrollToOffer}
               id="btn-final-cta"
               data-checkout="final"
-              className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-3 px-8 py-4.5 rounded-xl bg-[#E50920] hover:bg-[#B80818] text-white font-black text-sm sm:text-base uppercase tracking-wider transition-all duration-300 hover:scale-105 red-glow-lg cursor-pointer"
+              className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-3 px-10 py-5 rounded-xl bg-[#E50920] hover:bg-[#B80818] text-white font-black text-sm sm:text-base uppercase tracking-wider transition-all duration-300 hover:scale-105 shadow-[0_0_20px_rgba(229,9,32,0.4)] cursor-pointer"
             >
-              <span>QUERO O EFEITO BARTENDER</span>
+              <span>QUERO APRENDER A FAZER OS COPÕES</span>
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </button>
           </div>

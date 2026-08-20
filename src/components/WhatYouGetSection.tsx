@@ -11,39 +11,32 @@ export const WhatYouGetSection: React.FC = () => {
             <BookOpen className="w-4 h-4 text-[#E50920]" />
             <span>O QUE VOCÊ VAI APRENDER NO MÉTODO</span>
           </div>
-          <h2 className="font-serif-display font-bold text-2xl sm:text-4xl text-[#F5F5F0] mb-4">
-            Do Supermercado Direto pro Copão
+          <h2 className="font-serif-display font-bold text-3xl sm:text-4xl text-[#F5F5F0] mb-4">
+            Você recebe:
           </h2>
-          <p className="text-base sm:text-lg text-[#B8B8B8]">
-            Tudo o que você precisa para transformar ingredientes simples de mercado em copões com visual e sabor de alto nível.
+          <p className="text-base sm:text-lg text-[#B8B8B8] max-w-2xl mx-auto">
+            Acesso imediato ao material completo otimizado para o seu celular.
           </p>
         </div>
 
         {/* 4 Core Modules Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
           {WHAT_YOU_GET.map((item, idx) => {
             const IconComp = idx === 0 ? BookOpen : idx === 1 ? Layers : idx === 2 ? Sparkles : ShoppingCart;
             return (
               <div
                 key={idx}
-                className="bg-[#171717] border border-[#262626] hover:border-[#E50920]/50 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-[#E50920]/10 flex flex-col justify-between"
+                className="bg-[#171717] border border-[#262626] rounded-2xl p-6 transition-all duration-300"
               >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#231215] border border-[#E50920]/40 flex items-center justify-center text-[#E50920]">
-                      <IconComp className="w-6 h-6" />
-                    </div>
-                    <span className="text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded bg-[#111111] text-[#E50920] border border-[#2a2a2a]">
-                      {item.tag}
-                    </span>
-                  </div>
-                  <h3 className="font-serif-display font-bold text-lg text-[#F5F5F0] mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#B8B8B8] leading-relaxed">
-                    {item.description}
-                  </p>
+                <div className="w-12 h-12 rounded-xl bg-[#231215] border border-[#E50920]/40 flex items-center justify-center text-[#E50920] mb-4">
+                  <IconComp className="w-6 h-6" />
                 </div>
+                <h3 className="font-bold text-base text-[#F5F5F0] mb-2 uppercase tracking-wide">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-[#B8B8B8] leading-relaxed">
+                  {item.description}
+                </p>
               </div>
             );
           })}
