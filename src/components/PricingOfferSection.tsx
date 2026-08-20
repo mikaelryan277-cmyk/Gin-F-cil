@@ -59,15 +59,17 @@ export const PricingOfferSection: React.FC<PricingOfferSectionProps> = ({
 
                 <div>
                   <div className="text-center pb-6 border-b border-[#262626]">
-                    <h3 className="font-serif-display font-bold text-2xl text-[#F5F5F0] mb-2 uppercase tracking-wide">
-                      {plan.name}
-                    </h3>
-                    <p className="text-sm text-[#888888] font-medium italic">
-                      {plan.tagline}
-                    </p>
+                    <div className="min-h-[80px] flex flex-col justify-center">
+                      <h3 className="font-serif-display font-bold text-2xl text-[#F5F5F0] mb-2 uppercase tracking-wide">
+                        {plan.name}
+                      </h3>
+                      <p className="text-sm text-[#888888] font-medium italic">
+                        {plan.tagline}
+                      </p>
+                    </div>
 
                     {/* Pricing */}
-                    <div className="mt-8">
+                    <div className="mt-8 min-h-[100px] flex flex-col justify-center">
                       <p className="text-xs text-[#888888] line-through font-semibold mb-1">
                         De R$ {plan.originalPrice}
                       </p>
