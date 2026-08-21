@@ -19,16 +19,16 @@ export const PricingOfferSection: React.FC<PricingOfferSectionProps> = ({
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[400px] bg-[#E50920]/10 blur-[150px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1c1214] border border-[#E50920]/50 text-xs font-extrabold text-[#E50920] mb-4 red-glow">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1c1214] border border-[#E50920]/50 text-xs font-extrabold text-[#E50920] mb-3">
             <Zap className="w-4 h-4 text-[#E50920]" />
             <span>OFERTA LIMITADA DE LANÇAMENTO</span>
           </div>
-          <h2 className="font-serif-display font-bold text-3xl sm:text-5xl text-[#F5F5F0] mb-4">
-            Escolha o Seu Plano
+          <h2 className="font-serif-display font-bold text-2xl sm:text-4xl text-[#F5F5F0] mb-2">
+            Escolha sua versão
           </h2>
-          <p className="text-base sm:text-lg text-[#B8B8B8]">
-            Acesso vitalício imediato. Pagamento único, sem mensalidades.
+          <p className="text-sm sm:text-base text-[#B8B8B8]">
+            Pagamento único. Acesso vitalício.
           </p>
         </div>
 
@@ -60,17 +60,17 @@ export const PricingOfferSection: React.FC<PricingOfferSectionProps> = ({
                 <div>
                   <div className="text-center pb-6 border-b border-[#262626]">
                     {/* Header Area with consistent height on desktop to ensure price alignment */}
-                    <div className="lg:h-[90px] flex flex-col justify-center mb-4">
-                      <h3 className="font-serif-display font-bold text-2xl text-[#F5F5F0] mb-2 uppercase tracking-wide">
+                    <div className="lg:h-[80px] flex flex-col justify-center mb-4">
+                      <h3 className="font-serif-display font-bold text-2xl text-[#F5F5F0] mb-1 uppercase tracking-wide">
                         {plan.name}
                       </h3>
-                      <p className="text-sm text-[#888888] font-medium italic">
+                      <p className="text-sm text-[#888888] font-medium">
                         {plan.tagline}
                       </p>
                     </div>
 
                     {/* Standardized Price Area */}
-                    <div className="price-area flex flex-col items-center justify-center min-h-[140px] mt-6">
+                    <div className="price-area flex flex-col items-center justify-center min-h-[140px] mt-4">
                       <div className="old-price text-xs text-[#888888] line-through font-semibold mb-1">
                         De R$ {plan.originalPrice}
                       </div>
@@ -140,21 +140,6 @@ export const PricingOfferSection: React.FC<PricingOfferSectionProps> = ({
               </div>
             );
           })}
-        </div>
-
-        {/* Guarantee Banner Box */}
-        <div className="mt-14 max-w-3xl mx-auto bg-[#171717] border border-[#262626] rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 shadow-2xl text-center sm:text-left">
-          <div className="w-16 h-16 rounded-2xl bg-[#231215] border border-[#E50920]/40 flex items-center justify-center shrink-0 text-[#E50920]">
-            <ShieldCheck className="w-9 h-9" />
-          </div>
-          <div>
-            <h4 className="font-serif-display font-bold text-lg sm:text-xl text-[#F5F5F0] mb-1">
-              Risco Zero: 7 Dias de Garantia Incondicional
-            </h4>
-            <p className="text-xs sm:text-sm text-[#B8B8B8] leading-relaxed">
-              Teste o método por 7 dias. Se você decidir que o produto não é para você, solicite o reembolso dentro do prazo e devolvemos 100% do seu investimento.
-            </p>
-          </div>
         </div>
       </div>
     </section>

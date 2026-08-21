@@ -3,23 +3,23 @@ import { ShieldCheck, Lock, CheckCircle2 } from 'lucide-react';
 
 export const GuaranteeSection: React.FC = () => {
   return (
-    <section className="py-16 sm:py-24 bg-[#090909] relative border-b border-[#1c1c1c]">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="bg-[#171717] border-2 border-[#E50920]/50 rounded-3xl p-8 sm:p-12 shadow-2xl red-glow relative overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+    <section className="py-16 sm:py-20 bg-[#090909] relative border-b border-[#1c1c1c]">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="bg-[#141414] border-2 border-[#E50920]/50 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
             {/* Left Column: Red Shield Seal Emblem */}
             <div className="lg:col-span-4 flex flex-col items-center justify-center text-center">
               <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-gradient-to-br from-[#E50920] via-[#FF334B] to-[#8A0612] p-1 shadow-2xl flex items-center justify-center">
                 <div className="w-full h-full bg-[#090909] rounded-full flex flex-col items-center justify-center text-center p-2">
-                  <ShieldCheck className="w-12 h-12 text-[#E50920] mb-1" />
+                  <ShieldCheck className="w-10 h-10 text-[#E50920] mb-1" />
                   <span className="font-serif-display font-black text-xl text-[#F5F5F0]">7 DIAS</span>
-                  <span className="text-[9px] font-bold uppercase text-[#E50920]">GARANTIA RISCO ZERO</span>
+                  <span className="text-[8px] font-bold uppercase text-[#E50920]">GARANTIA TOTAL</span>
                 </div>
               </div>
             </div>
 
             {/* Right Column: Copy & Details */}
-            <div className="lg:col-span-8 text-center lg:text-left space-y-4">
+            <div className="lg:col-span-8 text-center lg:text-left space-y-3">
               <span className="text-xs font-bold text-[#E50920] uppercase tracking-widest">RISCO ZERO</span>
               <h2 className="font-serif-display font-bold text-2xl sm:text-3xl text-[#F5F5F0]">
                 7 DIAS DE GARANTIA
@@ -36,7 +36,7 @@ export const GuaranteeSection: React.FC = () => {
                 </div>
                 <div className="flex items-center gap-1.5">
                   <Lock className="w-4 h-4 text-[#E50920]" />
-                  <span>Processado de forma segura</span>
+                  <span>Processado de forma 100% segura</span>
                 </div>
               </div>
             </div>
@@ -46,4 +46,5 @@ export const GuaranteeSection: React.FC = () => {
     </section>
   );
 };
+
 

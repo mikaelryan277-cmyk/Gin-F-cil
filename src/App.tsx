@@ -1,19 +1,16 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { HeroSection } from './components/HeroSection';
-import { SocialProofSection } from './components/SocialProofSection';
-import { WhatWillLearnSection } from './components/WhatWillLearnSection';
 import { PainAvatarSection } from './components/PainAvatarSection';
+import { HowItWorksSection } from './components/HowItWorksSection';
 import { WhatYouGetSection } from './components/WhatYouGetSection';
+import { SocialProofSection } from './components/SocialProofSection';
 import { PricingOfferSection } from './components/PricingOfferSection';
 import { GuaranteeSection } from './components/GuaranteeSection';
 import { FaqSection } from './components/FaqSection';
 import { FinalCtaFooter } from './components/FinalCtaFooter';
 
-// Loading fallback (no longer needed for normal imports but kept for structural consistency if needed)
-const SectionLoader = () => <div className="py-20 bg-[#090909]" />;
-
-// Mockup oficial em alta definição (salvo localmente e com fallbacks)
+// Mockup oficial em alta definição
 const NEW_MOCKUP_IMAGE_URL = '/mockup-efeito-bartender.png';
 
 export default function App() {
@@ -27,72 +24,50 @@ export default function App() {
     }
   };
 
-  const scrollToPreview = () => {
-    const el = document.getElementById('what-will-learn');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <div className="min-h-screen bg-[#090909] text-[#F5F5F0] font-sans-body antialiased selection:bg-[#E50920] selection:text-white bg-urban-dark">
-      {/* Main Content Sections */}
       <main>
-        {/* 1. Hero Section (CRITICAL) */}
+        {/* 1. Hero Section */}
         <HeroSection
           onScrollToOffer={scrollToOffer}
-          onScrollToPreview={scrollToPreview}
           mockupImgPath={NEW_MOCKUP_IMAGE_URL}
         />
 
-        {/* 2. What Will Learn (IMMEDIATELY AFTER HERO) */}
-        <div className="section-lazy" id="what-will-learn">
-          <WhatWillLearnSection />
-        </div>
+        {/* 2. Para Quem É / Problemas */}
+        <PainAvatarSection />
 
-        {/* 3. Pain / Avatar Identification Section */}
-        <div className="section-lazy">
-          <PainAvatarSection />
-        </div>
+        {/* 3. Como Funciona (3 passos) */}
+        <HowItWorksSection />
 
-        {/* 5. What You Get (Explicit Deliverables) */}
-        <div className="section-lazy">
-          <WhatYouGetSection />
-        </div>
+        {/* 4. O Que Você Recebe */}
+        <WhatYouGetSection />
 
-        {/* 6. Social Proof & Real Reviews */}
-        <div className="section-lazy">
-          <SocialProofSection />
-        </div>
+        {/* 5. Avaliações Reais */}
+        <SocialProofSection />
 
-        {/* 6. Pricing Offer Section (2 Cards Side by Side) */}
-        <div className="section-lazy" id="pricing-section">
+        {/* 6. Oferta (Pricing com preços alinhados) */}
+        <div id="pricing-section">
           <PricingOfferSection
             customCheckoutBasic={checkoutBasic}
             customCheckoutComplete={checkoutComplete}
           />
         </div>
 
-        {/* 7. 7-Day Guarantee */}
-        <div className="section-lazy">
-          <GuaranteeSection />
-        </div>
+        {/* 7. 7 Dias de Garantia */}
+        <GuaranteeSection />
 
-        {/* 8. FAQ Accordion */}
-        <div className="section-lazy">
-          <FaqSection />
-        </div>
+        {/* 8. Perguntas Frequentes (FAQ) */}
+        <FaqSection />
 
-        {/* 9. Final Urgency CTA & Footer */}
-        <div className="section-lazy">
-          <FinalCtaFooter
-            onScrollToOffer={scrollToOffer}
-            checkoutUrlComplete={checkoutComplete}
-          />
-        </div>
+        {/* 9. CTA Final + Rodapé */}
+        <FinalCtaFooter
+          onScrollToOffer={scrollToOffer}
+          checkoutUrlComplete={checkoutComplete}
+        />
       </main>
     </div>
   );
 }
+
 
 
